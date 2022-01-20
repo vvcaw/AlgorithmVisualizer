@@ -1,30 +1,13 @@
-import { Logo } from './pages/logo'
+import { Sidebar } from './components/sidebar/Sidebar'
+import { Main } from './components/main/Main'
 
-export function App(props) {
+export function App() {
   return (
     <>
-      <Logo />
-      <p>Hello Vite + Preact!</p>
-      <p>
-        <a
-          className="bg-background"
-          href="https://preactjs.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Preact
-        </a>
-      </p>
-        <p>
-            <a
-                className="bg-hovercolor"
-                href="https://preactjs.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Learn Preact
-            </a>
-        </p>
+        <div className="grid grid-cols-12">
+            <Sidebar col={'col-span-3'} />
+            <Main col={'col-span-9'} />
+        </div>
     </>
   )
 }
