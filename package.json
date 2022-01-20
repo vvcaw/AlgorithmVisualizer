@@ -10,6 +10,7 @@
     "preact": "^10.5.15"
   },
   "devDependencies": {
+    "@heroicons/react": "^1.0.5",
     "@preact/preset-vite": "^2.1.5",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.5",
