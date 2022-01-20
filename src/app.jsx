@@ -7,7 +7,7 @@ export function App(props) {
       <p>Hello Vite + Preact!</p>
       <p>
         <a
-          class="bg-black"
+          className="bg-background"
           href="https://preactjs.com/"
           target="_blank"
           rel="noopener noreferrer"
@@ -15,6 +15,16 @@ export function App(props) {
           Learn Preact
         </a>
       </p>
+        <p>
+            <a
+                className="bg-hovercolor"
+                href="https://preactjs.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Learn Preact
+            </a>
+        </p>
     </>
   )
 }
