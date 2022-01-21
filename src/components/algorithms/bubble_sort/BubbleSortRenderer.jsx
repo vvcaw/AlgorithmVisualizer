@@ -8,7 +8,7 @@ export const BubbleSortRenderer = (props) => {
 
     const random = () => {
         if (!sorting) {
-            let array = Array.from({length: 10}, () => Math.floor(Math.random() * 100)).map((x, i) => ({
+            let array = Array.from({length: 80}, () => Math.floor(Math.random() * 100) + 1).map((x, i) => ({
                 id: `block${i}`,
                 value: x
             }))
@@ -68,9 +68,28 @@ export const BubbleSortRenderer = (props) => {
         random()
     }, [])
 
+    function isOverflown(element) {
+        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+    }
+
     return (
         <>
+            <div className="flex justify-center items-end h-full">
+                {sortingArray.map((item) =>
+                    <div className="p-1"
+                         style={{
+                             height: item.value + "%",
+                             width: 100 / sortingArray.length + "%",
+                             fontSize: (100 / sortingArray.length) / 2 + "em"
+                         }} key={item.id}>
+                        <div
+                            className="bg-primary rounded-lg h-full text-center text-white items-start"
+                        >
 
+                        </div>
+                    </div>
+                )}
+            </div>
         </>
     )
 }
