@@ -1,4 +1,5 @@
 import {useEffect, useState} from "preact/compat";
+import {gsap} from "gsap";
 
 export const BubbleSortRenderer = (props) => {
 
@@ -22,6 +23,7 @@ export const BubbleSortRenderer = (props) => {
         console.log(array)
         // TODO :: Draw bars on the screen with correct id's
     }
+
 
     const sort = () => {
         // State update
@@ -90,6 +92,8 @@ export const BubbleSortRenderer = (props) => {
                     </div>
                 )}
             </div>
+
+
         </>
     )
 }
