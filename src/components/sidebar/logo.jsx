@@ -1,7 +1,7 @@
 export const Logo = (props) => (
-    <div className={`bg-primary w-20 h-20 rounded-md ${props.style}`}>
+    <div className={`bg-primary w-14 h-14 lg:w-20 lg:h-20 rounded-md ${props.style}`}>
         <svg
-            className="w-20 h-20"
+            className="w-14 h-14 lg:w-20 lg:h-20"
             width="100mm"
             height="100mm"
             viewBox="0 0 100 100"
