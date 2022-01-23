@@ -2,7 +2,7 @@
     import XIcon from "../icons/XIcon.svelte";
     import MenuAlt4Icon from "../icons/MenuAlt4Icon.svelte";
 
-    export let toggled = false
+    export let toggled = true
 
     const toggle = () => { toggled = !toggled }
 </script>

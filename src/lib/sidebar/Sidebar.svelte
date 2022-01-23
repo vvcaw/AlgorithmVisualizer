@@ -4,11 +4,11 @@
     import Logo from './Logo.svelte'
     import Toggle from "./Toggle.svelte";
 
-    let toggled = false
+    let toggled = true
 </script>
 
 <div class="bg-white lg:h-screen h-auto lg:pb-0 lg:pr-12 lg:col-span-3 col-span-12">
-    <div class="pl-10 pt-10 pr-10">
+    <div class="pl-10 lg:pt-10 pt-5 pr-10 pb-5 lg:pb-0">
         <div class="flex justify-between">
             <Logo/>
             <Toggle bind:toggled={toggled}/>
