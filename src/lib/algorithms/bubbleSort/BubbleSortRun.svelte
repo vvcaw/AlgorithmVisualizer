@@ -1,4 +1,4 @@
-<div class="h-full w-full flex flex-row justify-between items-center pl-4 pr-4">
+<div class="h-full w-full flex lg:flex-row flex-col lg:gap-y-0 gap-y-6 justify-between items-center pl-4 pr-4">
     <div class="h-10 flex justify-center items-center">
         <div class="relative">
             <div class="absolute top-2 left-2">
@@ -16,7 +16,7 @@
     </div>
 
 
-    <div class="flex gap-x-3">
+    <div class="flex lg:flex-row flex-col lg:gap-y-0 gap-y-4 gap-x-3">
         <button
                 class="bg-white p-2 h-10 w-32 rounded-3xl text-subfontcolor font-medium flex flex-row-reverse justify-center items-center gap-x-1 shadow-md hover:opacity-80 hover:text-primary hover:font-bold">
             <span>Clear</span>
