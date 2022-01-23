@@ -1,16 +1,9 @@
 <script>
-    import * as Q from 'jquery'
-    import Sidebar from "./lib/Sidebar.svelte";
-
-    Q(".bg-amber-500").css({})
+    import Sidebar from "./lib/sidebar/Sidebar.svelte";
 </script>
 
 <main>
-    <div>
-        <div class="grid grid-cols-12">
-            <Sidebar/>
-        </div>
-
-
+    <div class="grid grid-cols-12">
+        <Sidebar/>
     </div>
 </main>
