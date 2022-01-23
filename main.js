@@ -1,4 +1,4 @@
-import './index.css'
+import './src/index.css'
 
 document.querySelector('#app').innerHTML = `
   <h1>Hello Vite!</h1>
