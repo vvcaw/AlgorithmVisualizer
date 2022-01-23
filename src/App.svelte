@@ -1,11 +1,14 @@
 <script>
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
+  import * as Q from 'jquery'
+
+  Q(".bg-amber-500").css({})
 </script>
 
 <main>
   <img src={logo} alt="Svelte Logo" />
-  <h1 class="bg-amber-500">Hello world!</h1>
+  <h1 class="bg-amber-500 border-2 border border-primary">Hello world! asdf</h1>
 
   <Counter />
 
