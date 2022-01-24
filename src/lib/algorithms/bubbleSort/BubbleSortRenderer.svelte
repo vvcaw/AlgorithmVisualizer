@@ -1,4 +1,6 @@
 <script>
+    import {gsap} from "gsap";
+
     let sortingArray = []
 
     const random = () => {
@@ -74,6 +76,7 @@
 
     random()
 
+
 </script>
 
 <div class="flex justify-center items-end h-full">
@@ -83,3 +86,4 @@
         </div>
     {/each}
 </div>
+
