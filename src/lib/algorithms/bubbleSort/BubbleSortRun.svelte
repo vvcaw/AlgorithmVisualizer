@@ -8,6 +8,9 @@
     const dispatch = createEventDispatcher()
 
     let toAdd
+    let toClear
+    let toShuffle
+    let toRun
 </script>
 
 <div class="h-full w-full flex lg:flex-row flex-col lg:gap-y-0 gap-y-6 justify-between items-center pl-4 pr-4">
@@ -29,18 +32,20 @@
     </div>
 
     <div class="flex lg:flex-row flex-col lg:gap-y-0 gap-y-4 gap-x-3">
-        <button
+        <button on:click={dispatch('clear-event', toClear)} bind:this={toClear}
                 class="bg-white p-2 h-10 w-32 rounded-3xl text-subfontcolor font-medium flex flex-row-reverse justify-center items-center gap-x-1 shadow-md hover:opacity-80 hover:text-primary hover:font-bold">
             <span>Clear</span>
             <XCircleIcon iconStyle="h-5 w-5 mt-0.5"/>
         </button>
 
-        <button class="bg-white p-2 h-10 w-32 rounded-3xl text-subfontcolor font-medium flex flex-row-reverse justify-center items-center gap-x-1 shadow-md hover:opacity-80 hover:text-primary hover:font-bold">
+        <button on:click={dispatch('shuffle-event', toShuffle)} bind:this={toShuffle}
+                class="bg-white p-2 h-10 w-32 rounded-3xl text-subfontcolor font-medium flex flex-row-reverse justify-center items-center gap-x-1 shadow-md hover:opacity-80 hover:text-primary hover:font-bold">
             <span>Shuffle</span>
             <SortDescendingIcon iconStyle="h-5 w-5 mt-0.5"/>
         </button>
 
-        <button class="bg-white p-2 h-10 w-32 rounded-3xl text-subfontcolor font-medium flex flex-row-reverse justify-center items-center gap-x-1 shadow-md hover:opacity-80 hover:text-primary hover:font-bold">
+        <button on:click={dispatch('run-event', toRun)} bind:this={toRun}
+                class="bg-white p-2 h-10 w-32 rounded-3xl text-subfontcolor font-medium flex flex-row-reverse justify-center items-center gap-x-1 shadow-md hover:opacity-80 hover:text-primary hover:font-bold">
             <span>Run</span>
             <FastForwardIcon iconStyle="h-5 w-5 mt-0.5"/>
         </button>

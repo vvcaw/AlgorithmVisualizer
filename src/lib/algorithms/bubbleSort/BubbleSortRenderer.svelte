@@ -2,7 +2,11 @@
     let sortingArray = []
 
     const random = () => {
-        sortingArray = Array.from({length: 20}, () => Math.floor(Math.random() * 100) + 1).map((x, i) => ({
+        sortingArray = generateArray()
+    }
+
+    const generateArray = () =>{
+        return Array.from({length: 20}, () => Math.floor(Math.random() * 100) + 1).map((x, i) => ({
             id: `block${i}`,
             value: x
         }));
@@ -18,7 +22,21 @@
         ]
     }
 
+    export const shuffle = () => {
+        sortingArray = generateArray()
+    }
+
+    export const clear = () => {
+        sortingArray = []
+    }
+
+    export const run = () =>{
+        console.log(sortingArray)
+
+    }
+
     random()
+
 </script>
 
 <div class="flex justify-center items-end h-full">
