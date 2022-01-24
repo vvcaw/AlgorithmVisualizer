@@ -39,7 +39,7 @@
 
     const startAlgo = () => {
         let timeline = gsap.timeline({paused: true, smoothChildTiming: false})
-        let animationDelay = 0.2
+        let animationDelay = 0
 
         let sorted = false
         let runIsSorted = true
