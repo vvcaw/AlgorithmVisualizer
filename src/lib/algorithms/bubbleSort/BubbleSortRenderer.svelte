@@ -32,7 +32,44 @@
 
     export const run = () =>{
         console.log(sortingArray)
+        startAlgo()
+    }
 
+    const startAlgo = () => {
+
+
+        let sorted = false
+        let runIsSorted = true
+        let index = 0
+        let array = sortingArray
+        let endIndex = array.length - 1
+
+        while (!sorted) {
+            let item = array[index]
+            let next = array[index + 1]
+
+            if (index === endIndex) {
+                index = 0
+                endIndex--
+
+                if (runIsSorted) {
+                    sorted = true
+                }
+
+                runIsSorted = true
+            } else {
+                // Swap with next bar
+                if (next.value < item.value) {
+                    runIsSorted = false
+                    array[index + 1] = item
+                    array[index] = next
+                }
+
+                index++
+            }
+
+        }
+        sortingArray = array
     }
 
     random()
