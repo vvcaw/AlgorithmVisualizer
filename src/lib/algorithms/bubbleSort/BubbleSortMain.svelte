@@ -10,6 +10,8 @@
 </div>
 
 <div class="p-4 w-full lg:h-28 h-auto rounded-lg bg-primary shadow-md">
-    <BubbleSortRun on:add-event={e => renderer.add(e.detail)} on:clear-event={renderer.clear()}
-                   on:shuffle-event={renderer.shuffle()} on:run-event={renderer.run()}/>
+    <BubbleSortRun on:add-event={e => renderer.add(e.detail)}
+                   on:clear-event={renderer.clear()}
+                   on:shuffle-event={renderer.shuffle()}
+                   on:run-event={renderer.run()}/>
 </div>

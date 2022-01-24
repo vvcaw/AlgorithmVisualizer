@@ -1,5 +1,6 @@
 <script>
     import {gsap} from "gsap";
+    import * as Q from 'jquery';
 
     let sortingArray = []
 
@@ -7,7 +8,7 @@
         sortingArray = generateArray()
     }
 
-    const generateArray = () =>{
+    const generateArray = () => {
         return Array.from({length: 20}, () => Math.floor(Math.random() * 100) + 1).map((x, i) => ({
             id: `block${i}`,
             value: x
@@ -32,13 +33,13 @@
         sortingArray = []
     }
 
-    export const run = () =>{
-        console.log(sortingArray)
+    export const run = () => {
         startAlgo()
     }
 
     const startAlgo = () => {
-
+        let timeline = gsap.timeline({paused: true, smoothChildTiming: false})
+        let animationDelay = 0.2
 
         let sorted = false
         let runIsSorted = true
@@ -60,8 +61,14 @@
 
                 runIsSorted = true
             } else {
-                // Swap with next bar
                 if (next.value < item.value) {
+                    // Render bars
+                    let barWidth = Q(`#${next.id}`).outerWidth()
+                    timeline.to(`#${item.id}`, {duration: 0.2, x: '+=' + `${barWidth}`}, animationDelay)
+                    timeline.to(`#${next.id}`, {duration: 0.2, x: '-=' + `${barWidth}`}, animationDelay)
+                    animationDelay += 0.2
+
+                    // Swap bars in list
                     runIsSorted = false
                     array[index + 1] = item
                     array[index] = next
@@ -71,12 +78,18 @@
             }
 
         }
-        sortingArray = array
+
+        timeline.play().then(() => {
+            // Reset css
+            array.forEach((v) => {
+                gsap.set(`#${v.id}`, {x: 0})
+            })
+
+            sortingArray = array
+        })
     }
 
     random()
-
-
 </script>
 
 <div class="flex justify-center items-end h-full">
