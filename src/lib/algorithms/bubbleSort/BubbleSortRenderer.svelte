@@ -4,6 +4,7 @@
 
     let sortingArray = []
     let timeline = gsap.timeline({paused: true, smoothChildTiming: false})
+    let animationStep = 0.4
 
     const random = () => {
         sortingArray = generateArray()
@@ -28,7 +29,6 @@
 
     export const shuffle = () => {
         sortingArray = generateArray()
-
     }
 
 
@@ -64,18 +64,29 @@
 
                 runIsSorted = true
             } else {
+                timeline.set(`#${item.id}-inner`, {backgroundColor: "#000000"}, animationDelay)
+
                 if (next.value < item.value) {
                     // Render bars
                     let barWidth = Q(`#${next.id}`).outerWidth()
-                    timeline.to(`#${item.id}`, {duration: 0.2, x: '+=' + `${barWidth}`}, animationDelay)
-                    timeline.to(`#${next.id}`, {duration: 0.2, x: '-=' + `${barWidth}`}, animationDelay)
-                    animationDelay += 0.2
+                    timeline.to(`#${item.id}`, {duration: animationStep, x: '+=' + `${barWidth}`}, animationDelay)
+
+                    timeline.to(`#${next.id}`, {duration: animationStep, x: '-=' + `${barWidth}`}, animationDelay)
+
+                    /*timeline.to(`#${next.id}-inner`, {backgroundColor: "#000000"}, animationDelay)
+                    timeline.to(`#${next.id}-inner`, {backgroundColor: "#768DF7"}, animationDelay + animationStep)*/
+
+                    animationDelay += animationStep
 
                     // Swap bars in list
                     runIsSorted = false
                     array[index + 1] = item
                     array[index] = next
+                } else {
+                    /*timeline.to(`#${item.id}-inner`, {backgroundColor: "#768DF7"}, animationDelay)*/
                 }
+
+                timeline.set(`#${item.id}-inner`, {backgroundColor: "#768DF7"}, animationDelay + animationStep)
 
                 index++
             }
@@ -98,7 +109,7 @@
 <div class="flex justify-center items-end h-full">
     {#each sortingArray as item, index}
         <div id={item.id} class="p-1" style="height: {item.value}%; width: {100 / sortingArray.length}%;">
-            <div class="bg-primary opacity-50 rounded-lg h-full text-center text-white items-start"></div>
+            <div id={`${item.id}-inner`} class="opacity-50 rounded-lg h-full text-center text-white items-start" style="background-color: #768DF7"></div>
         </div>
     {/each}
 </div>
