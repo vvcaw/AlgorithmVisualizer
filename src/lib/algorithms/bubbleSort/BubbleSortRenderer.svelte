@@ -64,7 +64,7 @@
 
                 runIsSorted = true
             } else {
-                timeline.set(`#${item.id}-inner`, {backgroundColor: "#000000"}, animationDelay)
+                timeline.to(`#${item.id}-inner`, {backgroundColor: "#F15223"}, animationDelay)
 
                 if (next.value < item.value) {
                     // Render bars
@@ -73,8 +73,8 @@
 
                     timeline.to(`#${next.id}`, {duration: animationStep, x: '-=' + `${barWidth}`}, animationDelay)
 
-                    /*timeline.to(`#${next.id}-inner`, {backgroundColor: "#000000"}, animationDelay)
-                    timeline.to(`#${next.id}-inner`, {backgroundColor: "#768DF7"}, animationDelay + animationStep)*/
+                    timeline.to(`#${next.id}-inner`, {backgroundColor: "#000000"}, animationDelay)
+                    timeline.to(`#${next.id}-inner`, {backgroundColor: "#768DF7"}, animationDelay + animationStep)
 
                     animationDelay += animationStep
 
@@ -83,10 +83,10 @@
                     array[index + 1] = item
                     array[index] = next
                 } else {
-                    /*timeline.to(`#${item.id}-inner`, {backgroundColor: "#768DF7"}, animationDelay)*/
+                    timeline.to(`#${item.id}-inner`, {backgroundColor: "#768DF7"}, animationDelay)
                 }
 
-                timeline.set(`#${item.id}-inner`, {backgroundColor: "#768DF7"}, animationDelay + animationStep)
+                /*timeline.set(`#${item.id}-inner`, {backgroundColor: "#768DF7"}, animationDelay + animationStep)*/
 
                 index++
             }
