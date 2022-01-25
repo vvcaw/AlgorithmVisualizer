@@ -3,6 +3,7 @@
     import * as Q from 'jquery';
 
     let sortingArray = []
+    let timeline = gsap.timeline({paused: true, smoothChildTiming: false})
 
     const random = () => {
         sortingArray = generateArray()
@@ -27,9 +28,12 @@
 
     export const shuffle = () => {
         sortingArray = generateArray()
+
     }
 
+
     export const clear = () => {
+        timeline.clear()
         sortingArray = []
     }
 
@@ -38,7 +42,6 @@
     }
 
     const startAlgo = () => {
-        let timeline = gsap.timeline({paused: true, smoothChildTiming: false})
         let animationDelay = 0
 
         let sorted = false
